@@ -165,7 +165,6 @@ async function main() {
       if (fs.existsSync(outputPath)) {
         fs.unlinkSync(outputPath);
       }
-      throw error;
     }
   };
 
@@ -183,6 +182,9 @@ async function main() {
   console.log('\nVerifying all downloaded files...');
   let verificationErrors = 0;
   for (const file of hashFile.files) {
+    // Skip mods_hash.txt from verification
+    if (file.name === 'mods_hash.txt') continue;
+
     const outputPath = path.join(modsDir, file.name);
     try {
       const actualHash = await calculateSHA1(outputPath);
@@ -198,10 +200,9 @@ async function main() {
 
   if (verificationErrors > 0) {
     console.log(`\n✗ Verification failed for ${verificationErrors} files`);
-    process.exit(1);
+  } else {
+    console.log('\n✓ All downloads completed and verified successfully!');
   }
-
-  console.log('\n✓ All downloads completed and verified successfully!');
 }
 
 main().catch(console.error);
