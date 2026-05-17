@@ -1,0 +1,31 @@
+version = 1
+enableSodiumMenu = true
+cloudCulling = true
+signTextCulling = true
+rainCulling = true
+dontCull = []
+useBlockStateCulling = true
+useCustomItemFrameRenderer = true
+itemFrameMapCulling = true
+useItemFrameLOD = true
+itemFrameLODRange = 16
+useItemFrame3FaceCulling = true
+itemFrame3FaceCullingRange = 2.0
+paintingCulling = true
+leavesCullingMode = "CHECK"
+leavesCullingAmount = 2
+includeMangroveRoots = true
+endGatewayCulling = false
+beaconBeamCulling = true
+useOnModdedBlocksByDefault = true
+
+[modCompatibility]
+urban_decor = true
+railways = true
+createrailwaysnavigator = true
+create = true
+dragonlib = true
+decocraft = true
+trafficcraft = true
+yuushya = true
+minecraft = true
