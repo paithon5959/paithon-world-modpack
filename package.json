@@ -10,11 +10,11 @@
     "@types/node": "^25.8.0",
     "axios": "^1.16.1",
     "progress": "^2.0.3",
-    "pthon-world-modpack": ".",
     "unzipper": "^0.12.3"
   },
   "devDependencies": {
     "@types/progress": "^2.0.7",
+    "@types/unzipper": "^0.10.11",
     "typescript": "^5.5.3"
   },
   "private": true
