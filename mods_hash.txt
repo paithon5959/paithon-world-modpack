@@ -50,4 +50,3 @@ fzzy_config-0.7.6+1.21+neoforge.jar|c0910f9b975aaab8545ce950539748fb33d704d1
 kotlinforforge-5.11.0-all.jar|4d83e8a8e8cb06b306d2cea1e903680fe513f1f3
 sodiumoptionsapi-neoforge-1.0.10-1.21.1.jar|5d014d031fa77ab600e07835b032ef4dcb79b442
 reeses-sodium-options-neoforge-1.8.3+mc1.21.4.jar|b03d05495be28d8cef7a34872941bb8d703d60e6
-mods_hash.txt|92c42017b2c97d5bea5956d1e224cb8c73b792b4
