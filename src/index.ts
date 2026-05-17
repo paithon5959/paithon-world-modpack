@@ -1,94 +1,15 @@
 import ProgressBar from 'progress';
 import axios from 'axios';
 import * as fs from 'fs';
-import * as crypto from 'crypto';
 import * as path from 'path';
 import * as unzipper from 'unzipper';
-
-interface HashFile {
-  files: Array<{
-    name: string;
-    hash: string;
-  }>;
-}
-
-interface FileEntry {
-  name: string;
-  hash: string;
-}
-
-async function calculateSHA1(filePath: string): Promise<string> {
-  const hash = crypto.createHash('sha1');
-  const stream = fs.createReadStream(filePath);
-
-  return new Promise((resolve, reject) => {
-    stream.on('data', (data) => hash.update(data));
-    stream.on('end', () => resolve(hash.digest('hex')));
-    stream.on('error', reject);
-  });
-}
-
-async function downloadFile(url: string, outputPath: string, onProgress: (bytes: number) => void): Promise<void> {
-  const writer = fs.createWriteStream(outputPath);
-  const response = await axios({
-    method: 'GET',
-    url: url,
-    responseType: 'stream'
-  });
-
-  response.data.on('data', (chunk: Buffer) => {
-    writer.write(chunk);
-    onProgress(chunk.length);
-  });
-
-  return new Promise((resolve, reject) => {
-    response.data.on('end', () => {
-      writer.end();
-      resolve();
-    });
-    response.data.on('error', reject);
-    writer.on('error', reject);
-  });
-}
-
-
-async function loadHashFile(filePath: string): Promise<HashFile> {
-  const content = fs.readFileSync(filePath, 'utf-8');
-  const lines = content.trim().split('\n').filter(line => line.trim() && !line.startsWith('#'));
-
-  const files: FileEntry[] = lines.map(line => {
-    const parts = line.split('|');
-    return {
-      name: parts[0].trim(),
-      hash: parts[1]?.trim() || ''
-    };
-  });
-
-  return { files };
-}
-
-interface ModrinthVersionFile {
-  files: Array<{
-    url: string;
-    primary: boolean;
-  }>;
-}
-
-async function getDownloadUrlFromHash(hash: string): Promise<string> {
-  const response = await axios.get(`https://api.modrinth.com/v2/version_file/${hash}`);
-  const data: ModrinthVersionFile = response.data;
-
-  // Find the primary file or use the first one
-  const file = data.files.find(f => f.primary) || data.files[0];
-  if (!file) {
-    throw new Error('No files found in Modrinth response');
-  }
-
-  return file.url;
-}
+import { calculateSHA1 } from './utils/hash.js';
+import { downloadFile } from './utils/download.js';
+import { loadHashFile, FileEntry } from './utils/file.js';
+import { getDownloadUrlFromHash } from './utils/modrinth.js';
 
 async function main() {
-  const githubRepo = process.argv[2] || 'paithon/paithon-world-modpack';
+  const githubRepo = process.argv[2] || 'paithon5959/paithon-world-modpack';
   const outputDir = process.argv[3] || './paithon-world';
   const concurrency = 4; // Number of concurrent downloads
 
@@ -107,24 +28,24 @@ async function main() {
   // Download entire repository as zip
   const zipUrl = `https://github.com/${githubRepo}/archive/refs/heads/main.zip`;
   const zipPath = path.join(outputDir, 'repo.zip');
-  
+
   try {
     await downloadFile(zipUrl, zipPath, () => {});
     console.log(`✓ Downloaded repository`);
-    
+
     // Extract zip file using unzipper
     const directory = await unzipper.Open.file(zipPath);
     const extractedDir = path.join(outputDir, `${githubRepo.split('/')[1]}-main`);
-    
+
     await directory.extract({ path: outputDir });
-    
+
     // Move contents from extracted folder to output directory
     if (fs.existsSync(extractedDir)) {
       const files = fs.readdirSync(extractedDir);
       for (const file of files) {
         const srcPath = path.join(extractedDir, file);
         const destPath = path.join(outputDir, file);
-        
+
         // Handle directory vs file
         if (fs.statSync(srcPath).isDirectory()) {
           if (!fs.existsSync(destPath)) {
@@ -142,7 +63,7 @@ async function main() {
       }
       fs.rmdirSync(extractedDir);
     }
-    
+
     // Clean up zip file
     fs.unlinkSync(zipPath);
     console.log(`✓ Extracted repository`);
