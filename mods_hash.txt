@@ -5,7 +5,6 @@ cloth-config-15.0.140-neoforge.jar|c3e5733ba4503b102589a026000fd5ce0212f6f2
 ferritecore-7.0.3-neoforge.jar|9563692efb708b6b568df27a01ec52f6311928ef
 iris-neoforge-1.8.12+mc1.21.1.jar|a3e6355915c7d3b2bc392724795113e51d289378
 sodium-extra-neoforge-0.6.0+mc1.21.1.jar|7473bb42753902c639294821af13e9cd9ee735da
-sodium-neoforge-0.6.13+mc1.21.1.jar|38af70fa4dc4b2aaac636e92fdba3bedd5a025e1
 railways-0.1.0+neoforge-mc1.21.1.jar|6eaa3864182762595ac81c067f37fad3a5b0ae07
 createrailwaysnavigator-neoforge-1.21.1-beta-0.8.5.jar|e24db63cec8d7cb1f35c569a5ca85d03ed34de9b
 create-1.21.1-6.0.9.jar|bf08bf8980c080f42d6f644f4f44a725cf7c3be9
@@ -19,7 +18,6 @@ fancymenu_neoforge_3.8.1_MC_1.21.1.jar|061a2c1ae0563d9d433928c243c58ee9b45f630f
 skinlayers3d-neoforge-1.11.1-mc1.21.1.jar|8f25b0babc279ee9f5d07f20d9168a7a4ef93dac
 dynamic-fps-3.11.4+minecraft-1.21.0-neoforge.jar|35b17e95b2b65930116ccc83e0cc358ac1bfcf9e
 e4mc-neoforge-6.1.0.jar|043f7ef49a74f9f51c1612df4ca0889ba71f1d0e
-modernfix-neoforge-5.27.2+mc1.21.1.jar|6a164013d692c209157d06e178bc43deb3e1d946
 ImmediatelyFast-NeoForge-1.6.10+1.21.1.jar|f1f5cccd7cb59d875f44566b2e557ccecc8c33fb
 BadOptimizations-2.4.1-1.21.1.jar|1461d8e46391efd32a3085150e86094c9f6f5c9d
 MouseTweaks-neoforge-mc1.21-2.26.1.jar|6dae57f4f50f7808d2ed9a18f6cd1c0d4640c6bc
@@ -44,9 +42,13 @@ blockentities-[NEOFORGED]-1.21.1+1.1.0.jar|b4f0c3fd91f2990ec60c40b979ab78a0187b7
 AmbientSounds_NEOFORGE_v6.3.8_mc1.21.1.jar|c79ab328b2c46068effebdcb3f26e98dc4404cb0
 immersive_paintings-neoforge-1.21.1-0.7.6.jar|0f2acb69a6a7a8694de296ac5785dc13e814e413
 smoothswapping-0.9.3.2-1.21.1-neoforge.jar|00338f16b360d6b24b53fc8f92b76256729aee75
-sodiumoptionsmodcompat-neoforge-1.0.0-1.21.1.jar|6a2716b169355edad7536b347390e362e949b06e
 CreativeCore_NEOFORGE_v2.13.38_mc1.21.1.jar|c3f1aa493ce0d3d60ba76e2b2d6b1dd65f60bde6
 fzzy_config-0.7.6+1.21+neoforge.jar|c0910f9b975aaab8545ce950539748fb33d704d1
 kotlinforforge-5.11.0-all.jar|4d83e8a8e8cb06b306d2cea1e903680fe513f1f3
+CTM-1.21-1.2.1+3.jar.old|284232c08d3b999f05417761a3efba9b08ba20a7
+waygl-neoforge-1.2.1.jar|8842fb039e919785b6003d068c9b666ebd1d4d6e
+modernfix-neoforge-5.27.8+mc1.21.1.jar|2fbce2437be5a2ac69aa093a388ca43f44245237
+sodiumoptionsmodcompat-neoforge-1.0.0-1.21.1.jar|6a2716b169355edad7536b347390e362e949b06e
 sodiumoptionsapi-neoforge-1.0.10-1.21.1.jar|5d014d031fa77ab600e07835b032ef4dcb79b442
 reeses-sodium-options-neoforge-1.8.3+mc1.21.4.jar|b03d05495be28d8cef7a34872941bb8d703d60e6
+sodium-neoforge-0.6.13+mc1.21.1.jar|38af70fa4dc4b2aaac636e92fdba3bedd5a025e1
