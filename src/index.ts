@@ -41,6 +41,17 @@ async function main() {
   // Download entire repository as zip
   const zipUrl = `https://github.com/${githubRepo}/archive/refs/heads/main.zip`;
   const zipPath = path.join(outputDir, 'repo.zip');
+  const extractedDir = path.join(outputDir, `${githubRepo.split('/')[1]}-main`);
+
+  // Clean up any existing extracted folder from previous runs
+  if (fs.existsSync(extractedDir)) {
+    fs.rmSync(extractedDir, { recursive: true, force: true });
+  }
+
+  // Clean up any existing zip file from previous runs
+  if (fs.existsSync(zipPath)) {
+    fs.unlinkSync(zipPath);
+  }
 
   try {
     await downloadFile(zipUrl, zipPath, () => {});
