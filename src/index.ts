@@ -335,6 +335,10 @@ async function main() {
   } else {
     console.log('\n✓ All downloads completed and verified successfully!');
   }
+
+  // Pause for 5 seconds before exit
+  console.log('\nExiting in 5 seconds...');
+  await new Promise(resolve => setTimeout(resolve, 5000));
 }
 
 main().catch(console.error);
