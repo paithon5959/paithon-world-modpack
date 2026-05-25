@@ -54,8 +54,75 @@ async function main() {
   }
 
   try {
-    await downloadFile(zipUrl, zipPath, () => {});
-    console.log(`✓ Downloaded repository`);
+    // Get repo zip size for progress bar
+    let repoSize = 0;
+    try {
+      // Try GET request with abort controller to get headers
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 5000);
+      
+      const getResponse = await axios.get(zipUrl, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+          'Accept': '*/*'
+        },
+        maxRedirects: 5,
+        responseType: 'stream',
+        signal: controller.signal,
+        onDownloadProgress: (progressEvent) => {
+          // Get size from first progress event
+          if (progressEvent.total && repoSize === 0) {
+            repoSize = progressEvent.total;
+            clearTimeout(timeout);
+            controller.abort();
+          }
+        }
+      });
+      
+      clearTimeout(timeout);
+      repoSize = parseInt(<string>getResponse.headers['content-length'] || '0');
+    } catch (error) {
+      if ((error as any).name !== 'CanceledError') {
+        console.error(`GET request failed for repo size: ${(error as Error).message}`);
+        console.error((error as Error).stack);
+      }
+    }
+
+    const repoSizeMB = repoSize / 1024 / 1024;
+    
+    // Create progress bar (use estimated size if actual size unknown)
+    const estimatedSize = repoSize > 0 ? repoSizeMB : 50; // Estimate 50MB if unknown
+    const repoBar = new ProgressBar('Downloading [:bar] :percent :etas :speed :downloaded/:total MB', {
+      complete: '=',
+      incomplete: ' ',
+      width: 40,
+      total: parseFloat(estimatedSize.toFixed(2))
+    });
+    
+    let repoDownloadedMB = 0;
+    const repoStartTime = Date.now();
+
+    await downloadFile(zipUrl, zipPath, (bytes) => {
+      const mb = bytes / 1024 / 1024;
+      repoDownloadedMB += mb;
+      
+      const elapsed = (Date.now() - repoStartTime) / 1000;
+      const speed = elapsed > 0 ? repoDownloadedMB / elapsed : 0;
+      try {
+        repoBar.tick(mb, {
+          speed: speed.toFixed(2) + ' MB/s',
+          downloaded: repoDownloadedMB.toFixed(2),
+          total: estimatedSize.toFixed(2)
+        });
+      } catch (barError) {
+        console.error(`Progress bar error during repo download: ${(barError as Error).message}`);
+        console.error((barError as Error).stack);
+      }
+    });
+
+    process.stdout.clearLine(0);
+    process.stdout.cursorTo(0);
+    console.log(`✓ Downloaded repository (${repoDownloadedMB.toFixed(2)} MB)`);
 
     // Extract zip file using unzipper
     const directory = await unzipper.Open.file(zipPath);
