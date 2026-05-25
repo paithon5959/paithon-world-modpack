@@ -126,8 +126,6 @@ async function main() {
 
     // Extract zip file using unzipper
     const directory = await unzipper.Open.file(zipPath);
-    const extractedDir = path.join(outputDir, `${githubRepo.split('/')[1]}-main`);
-
     await directory.extract({ path: outputDir });
 
     // Move contents from extracted folder to output directory
