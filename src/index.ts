@@ -179,6 +179,7 @@ async function main() {
   let downloadedMB = 0;
   const startTime = Date.now();
   let completedCount = 0;
+  const failedDownloads = new Set<string>();
 
   const downloadWithProgress = async (item: { file: FileEntry; url: string }) => {
     const { file, url } = item;
@@ -186,25 +187,44 @@ async function main() {
 
     try {
       await downloadFile(url, outputPath, (bytes) => {
-        const mb = bytes / 1024 / 1024;
-        downloadedMB += mb;
-        const elapsed = (Date.now() - startTime) / 1000;
-        const speed = elapsed > 0 ? downloadedMB / elapsed : 0; // MB/s
-        bar.tick(mb, {
-          speed: speed.toFixed(2) + ' MB/s',
-          downloaded: downloadedMB.toFixed(2),
-          total: totalSizeMB.toFixed(2)
-        });
+        try {
+          const mb = bytes / 1024 / 1024;
+          downloadedMB += mb;
+          const elapsed = (Date.now() - startTime) / 1000;
+          const speed = elapsed > 0 ? downloadedMB / elapsed : 0; // MB/s
+          bar.tick(mb, {
+            speed: speed.toFixed(2) + ' MB/s',
+            downloaded: downloadedMB.toFixed(2),
+            total: totalSizeMB.toFixed(2)
+          });
+        } catch (progressError) {
+          console.error(`Progress bar error for ${file.name}: ${(progressError as Error).message}`);
+          console.error((progressError as Error).stack);
+        }
       });
 
       process.stdout.clearLine(0);
-      console.log(`\n✓ ${file.name} downloaded`);
+      process.stdout.cursorTo(0);
+      console.log(`✓ Downloaded: ${file.name} (${completedCount + 1}/${filesToDownload.length})`);
       completedCount++;
-      console.log(`Progress: ${completedCount}/${filesToDownload.length} files completed`);
     } catch (error) {
-      console.log(`\n✗ Failed to download ${file.name}: ${(error as Error).message}`);
+      console.error(`\n✗ Download error for ${file.name}:`);
+      console.error(`  Message: ${(error as Error).message}`);
+      console.error(`  Stack: ${(error as Error).stack}`);
+      console.error(`  URL: ${url}`);
+      console.error(`  Output path: ${outputPath}`);
+      
+      process.stdout.clearLine(0);
+      process.stdout.cursorTo(0);
+      console.log(`✗ Failed: ${file.name}`);
+      failedDownloads.add(file.name);
       if (fs.existsSync(outputPath)) {
-        fs.unlinkSync(outputPath);
+        try {
+          fs.unlinkSync(outputPath);
+        } catch (cleanupError) {
+          console.error(`Failed to clean up ${outputPath}: ${(cleanupError as Error).message}`);
+          console.error((cleanupError as Error).stack);
+        }
       }
     }
   };
@@ -225,6 +245,12 @@ async function main() {
   for (const file of hashFile.files) {
     // Skip mods_hash.txt from verification
     if (file.name === 'mods_hash.txt') continue;
+
+    // Skip files that failed to download
+    if (failedDownloads.has(file.name)) {
+      console.log(`⊘ Skipping verification for ${file.name} (download failed)`);
+      continue;
+    }
 
     const outputPath = path.join(modsDir, file.name);
     try {
