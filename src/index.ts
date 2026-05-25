@@ -8,6 +8,19 @@ import { downloadFile } from './utils/download.js';
 import { loadHashFile, FileEntry } from './utils/file.js';
 import { getDownloadUrlFromHash } from './utils/modrinth.js';
 
+// Global error handlers
+process.on('uncaughtException', (error) => {
+  console.error('\n✗ UNCAUGHT EXCEPTION:', error.message);
+  console.error(error.stack);
+  process.exit(1);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('\n✗ UNHANDLED REJECTION at:', promise);
+  console.error('Reason:', reason);
+  process.exit(1);
+});
+
 async function main() {
   const githubRepo = process.argv[2] || 'paithon5959/paithon-world-modpack';
   const outputDir = process.argv[3] || './paithon-world';
