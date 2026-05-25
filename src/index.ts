@@ -78,10 +78,20 @@ async function main() {
           // Recursively move directory contents
           const subFiles = fs.readdirSync(srcPath);
           for (const subFile of subFiles) {
-            fs.renameSync(path.join(srcPath, subFile), path.join(destPath, subFile));
+            const srcSubPath = path.join(srcPath, subFile);
+            const destSubPath = path.join(destPath, subFile);
+            // Remove destination if it already exists
+            if (fs.existsSync(destSubPath)) {
+              fs.rmSync(destSubPath, { recursive: true, force: true });
+            }
+            fs.renameSync(srcSubPath, destSubPath);
           }
           fs.rmdirSync(srcPath);
         } else {
+          // Remove destination if it already exists
+          if (fs.existsSync(destPath)) {
+            fs.unlinkSync(destPath);
+          }
           fs.renameSync(srcPath, destPath);
         }
       }
@@ -93,6 +103,13 @@ async function main() {
     console.log(`✓ Extracted repository`);
   } catch (error) {
     console.log(`Warning: Could not download repository: ${(error as Error).message}`);
+    // Clean up partial downloads
+    if (fs.existsSync(zipPath)) {
+      fs.unlinkSync(zipPath);
+    }
+    if (fs.existsSync(extractedDir)) {
+      fs.rmSync(extractedDir, { recursive: true, force: true });
+    }
   }
 
   // Load hash file if it exists
