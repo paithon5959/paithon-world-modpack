@@ -3,7 +3,6 @@ concentration-neoforge-1.21-2.2.3.jar|4c4c8c9e1f7238b24f08ba9c642be9f3fcf089a6
 NoChatReports-NEOFORGE-1.21-v2.8.0.jar|4eb27301c1eb9291defc29249bac23d88c5317b1
 cloth-config-15.0.140-neoforge.jar|c3e5733ba4503b102589a026000fd5ce0212f6f2
 ferritecore-7.0.3-neoforge.jar|9563692efb708b6b568df27a01ec52f6311928ef
-iris-neoforge-1.8.12+mc1.21.1.jar|a3e6355915c7d3b2bc392724795113e51d289378
 sodium-extra-neoforge-0.6.0+mc1.21.1.jar|7473bb42753902c639294821af13e9cd9ee735da
 railways-0.1.0+neoforge-mc1.21.1.jar|6eaa3864182762595ac81c067f37fad3a5b0ae07
 createrailwaysnavigator-neoforge-1.21.1-beta-0.8.5.jar|e24db63cec8d7cb1f35c569a5ca85d03ed34de9b
@@ -21,7 +20,6 @@ e4mc-neoforge-6.1.0.jar|043f7ef49a74f9f51c1612df4ca0889ba71f1d0e
 ImmediatelyFast-NeoForge-1.6.10+1.21.1.jar|f1f5cccd7cb59d875f44566b2e557ccecc8c33fb
 BadOptimizations-2.4.1-1.21.1.jar|1461d8e46391efd32a3085150e86094c9f6f5c9d
 MouseTweaks-neoforge-mc1.21-2.26.1.jar|6dae57f4f50f7808d2ed9a18f6cd1c0d4640c6bc
-moreculling-neoforge-1.21.1-1.0.7.jar|834cc35294be3bb514bc0ba571ab7337961af383
 justzoom_neoforge_2.1.0_MC_1.21.1.jar|328da50972fa693b8e6f337d4a9560d4a6170ac3
 entityculling-neoforge-1.10.1-mc1.21.1.jar|68759da313caf8990bcd5d961bc691fa85fa3f0e
 decocraft-3.0.11-1.21.1-neoforge.jar|6704940aa352d1acf3cf9362e5ef8dd4e65b563c
@@ -37,7 +35,6 @@ CrashAssistant-neoforge-1.20.6-1.21.4-1.11.8.jar|558bc3dfee4d6e5fd7a3d7c794bb01d
 SimpleRPC-4.1.0+hotfix.1.jar|7477678e20649b2177de64de967b72525fa3556e
 CraterLib-Neoforge-1.21-3.1.1.jar|17a164b323369f3e0636737fab0ce58a00d65bc9
 Axiom-5.4.2-for-MC1.21.1.jar|1f98d5b1fdd4a20c6b181d9374ee93b3dc8515ca
-DBTools-1.3.5_AX5.2.1_MC1.20.5-1.21.4.jar.old|d23b99d8c5030078b12519ce98be769239bd944e
 blockentities-[NEOFORGED]-1.21.1+1.1.0.jar|b4f0c3fd91f2990ec60c40b979ab78a0187b7f88
 AmbientSounds_NEOFORGE_v6.3.8_mc1.21.1.jar|c79ab328b2c46068effebdcb3f26e98dc4404cb0
 immersive_paintings-neoforge-1.21.1-0.7.6.jar|0f2acb69a6a7a8694de296ac5785dc13e814e413
@@ -45,9 +42,10 @@ smoothswapping-0.9.3.2-1.21.1-neoforge.jar|00338f16b360d6b24b53fc8f92b76256729ae
 CreativeCore_NEOFORGE_v2.13.38_mc1.21.1.jar|c3f1aa493ce0d3d60ba76e2b2d6b1dd65f60bde6
 fzzy_config-0.7.6+1.21+neoforge.jar|c0910f9b975aaab8545ce950539748fb33d704d1
 kotlinforforge-5.11.0-all.jar|4d83e8a8e8cb06b306d2cea1e903680fe513f1f3
-waygl-neoforge-1.2.1.jar|8842fb039e919785b6003d068c9b666ebd1d4d6e
 modernfix-neoforge-5.27.8+mc1.21.1.jar|2fbce2437be5a2ac69aa093a388ca43f44245237
-sodiumoptionsmodcompat-neoforge-1.0.0-1.21.1.jar|6a2716b169355edad7536b347390e362e949b06e
-sodiumoptionsapi-neoforge-1.0.10-1.21.1.jar|5d014d031fa77ab600e07835b032ef4dcb79b442
-reeses-sodium-options-neoforge-1.8.3+mc1.21.4.jar|b03d05495be28d8cef7a34872941bb8d703d60e6
-sodium-neoforge-0.6.13+mc1.21.1.jar|38af70fa4dc4b2aaac636e92fdba3bedd5a025e1
+sodium-neoforge-0.8.12-alpha.4+mc1.21.1.jar|2aa70d594f698859b7bcc3d7876ffcbe140342d3
+iris-neoforge-1.8.13-snapshot+mc1.21.1-local.jar|3ff6c911857953b9ff368f7f1f15e1bd6b7848c4
+sodium-shadowy-path-blocks-neoforge-4.1.0.jar|315891dcf8459a53fe263d985073bef619c360d0
+reeses-sodium-options-neoforge-2.0.5+mc1.21.1.jar|9869222c022c73362ab22ea559f52c19dabf0467
+veil-neoforge-1.21.1-4.1.2.jar|c3c71f92caba331fe99aba8b8f469d5e2d4fab36
+moreculling-neoforge-1.21.1-1.0.8.jar|fdbfaa5d6d93a11d44020301199dac68de231649
