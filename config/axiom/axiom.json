@@ -96,8 +96,8 @@
     }
   },
   "visuals": {
-    "minBrightness": 0,
-    "liquidOpacity": 100,
+    "minBrightness": 96,
+    "liquidOpacity": 0,
     "showBiomes": false,
     "showAnnotations": true,
     "showRuler": true,
@@ -121,7 +121,7 @@
     "tinker": false,
     "infiniteReach": false,
     "infiniteReachLimit": -1,
-    "fastPlace": false,
+    "fastPlace": true,
     "angelPlacement": false,
     "noClip": false,
     "phantom": false

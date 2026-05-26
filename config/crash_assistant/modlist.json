@@ -199,13 +199,13 @@
     "curseForgeHash": 1422107438,
     "modrinthHash": "0f2acb69a6a7a8694de296ac5785dc13e814e413"
   },
-  "iris-neoforge-1.8.12+mc1.21.1.jar": {
-    "jarName": "iris-neoforge-1.8.12+mc1.21.1.jar",
+  "iris-neoforge-1.8.13-snapshot+mc1.21.1-local.jar": {
+    "jarName": "iris-neoforge-1.8.13-snapshot+mc1.21.1-local.jar",
     "modId": "iris",
     "name": "Iris",
-    "version": "1.8.12-snapshot+mc1.21.1-local",
-    "curseForgeHash": 2055048874,
-    "modrinthHash": "a3e6355915c7d3b2bc392724795113e51d289378"
+    "version": "1.8.13-snapshot+mc1.21.1-local",
+    "curseForgeHash": 3531618494,
+    "modrinthHash": "3ff6c911857953b9ff368f7f1f15e1bd6b7848c4"
   },
   "justzoom_neoforge_2.1.0_MC_1.21.1.jar": {
     "jarName": "justzoom_neoforge_2.1.0_MC_1.21.1.jar",
@@ -252,21 +252,21 @@
     "curseForgeHash": 2029427820,
     "modrinthHash": "e83052a92c4ca0016bcfe7f0207273983dc84698"
   },
-  "modernfix-neoforge-5.27.2+mc1.21.1.jar": {
-    "jarName": "modernfix-neoforge-5.27.2+mc1.21.1.jar",
+  "modernfix-neoforge-5.27.8+mc1.21.1.jar": {
+    "jarName": "modernfix-neoforge-5.27.8+mc1.21.1.jar",
     "modId": "modernfix",
     "name": "ModernFix",
-    "version": "5.27.2+mc1.21.1",
-    "curseForgeHash": 3161250221,
-    "modrinthHash": "6a164013d692c209157d06e178bc43deb3e1d946"
+    "version": "5.27.8+mc1.21.1",
+    "curseForgeHash": 3496257519,
+    "modrinthHash": "2fbce2437be5a2ac69aa093a388ca43f44245237"
   },
-  "moreculling-neoforge-1.21.1-1.0.7.jar": {
-    "jarName": "moreculling-neoforge-1.21.1-1.0.7.jar",
+  "moreculling-neoforge-1.21.1-1.0.8.jar": {
+    "jarName": "moreculling-neoforge-1.21.1-1.0.8.jar",
     "modId": "moreculling",
     "name": "More Culling",
-    "version": "1.0.7",
-    "curseForgeHash": 3317811947,
-    "modrinthHash": "834cc35294be3bb514bc0ba571ab7337961af383"
+    "version": "1.0.8",
+    "curseForgeHash": 3217070920,
+    "modrinthHash": "fdbfaa5d6d93a11d44020301199dac68de231649"
   },
   "MouseTweaks-neoforge-mc1.21-2.26.1.jar": {
     "jarName": "MouseTweaks-neoforge-mc1.21-2.26.1.jar",
@@ -308,13 +308,13 @@
     "curseForgeHash": 3845466027,
     "modrinthHash": "6eaa3864182762595ac81c067f37fad3a5b0ae07"
   },
-  "reeses-sodium-options-neoforge-1.8.3+mc1.21.4.jar": {
-    "jarName": "reeses-sodium-options-neoforge-1.8.3+mc1.21.4.jar",
+  "reeses-sodium-options-neoforge-2.0.5+mc1.21.1.jar": {
+    "jarName": "reeses-sodium-options-neoforge-2.0.5+mc1.21.1.jar",
     "modId": "reeses_sodium_options",
     "name": "Reese\u0027s Sodium Options",
-    "version": "1.8.3+mc1.21.4",
-    "curseForgeHash": 3206533594,
-    "modrinthHash": "b03d05495be28d8cef7a34872941bb8d703d60e6"
+    "version": "2.0.5+mc1.21.1",
+    "curseForgeHash": 882513489,
+    "modrinthHash": "9869222c022c73362ab22ea559f52c19dabf0467"
   },
   "SimpleRPC-4.1.0+hotfix.1.jar": {
     "jarName": "SimpleRPC-4.1.0+hotfix.1.jar",
@@ -348,29 +348,21 @@
     "curseForgeHash": 1727270791,
     "modrinthHash": "7473bb42753902c639294821af13e9cd9ee735da"
   },
-  "sodium-neoforge-0.6.13+mc1.21.1.jar": {
-    "jarName": "sodium-neoforge-0.6.13+mc1.21.1.jar",
+  "sodium-neoforge-0.8.12-alpha.4+mc1.21.1.jar": {
+    "jarName": "sodium-neoforge-0.8.12-alpha.4+mc1.21.1.jar",
     "modId": "sodium",
     "name": "Sodium",
-    "version": "0.6.13+mc1.21.1",
-    "curseForgeHash": 1900921493,
-    "modrinthHash": "38af70fa4dc4b2aaac636e92fdba3bedd5a025e1"
+    "version": "0.8.12-alpha.4+mc1.21.1",
+    "curseForgeHash": 3592661865,
+    "modrinthHash": "2aa70d594f698859b7bcc3d7876ffcbe140342d3"
   },
-  "sodiumoptionsapi-neoforge-1.0.10-1.21.1.jar": {
-    "jarName": "sodiumoptionsapi-neoforge-1.0.10-1.21.1.jar",
-    "modId": "sodiumoptionsapi",
-    "name": "Sodium Options API",
-    "version": "1.0.10",
-    "curseForgeHash": 2527579799,
-    "modrinthHash": "5d014d031fa77ab600e07835b032ef4dcb79b442"
-  },
-  "sodiumoptionsmodcompat-neoforge-1.0.0-1.21.1.jar": {
-    "jarName": "sodiumoptionsmodcompat-neoforge-1.0.0-1.21.1.jar",
-    "modId": "sodiumoptionsmodcompat",
-    "name": "Sodium Options Mod Compat",
-    "version": "1.0.0",
-    "curseForgeHash": 135655345,
-    "modrinthHash": "6a2716b169355edad7536b347390e362e949b06e"
+  "sodium-shadowy-path-blocks-neoforge-4.1.0.jar": {
+    "jarName": "sodium-shadowy-path-blocks-neoforge-4.1.0.jar",
+    "modId": "sspb",
+    "name": "Sodium Shadowy Path Blocks",
+    "version": "4.1.0",
+    "curseForgeHash": 1901034803,
+    "modrinthHash": "315891dcf8459a53fe263d985073bef619c360d0"
   },
   "threadtweak-fabric-0.1.5+mc1.21.1.jar": {
     "jarName": "threadtweak-fabric-0.1.5+mc1.21.1.jar",
@@ -387,6 +379,14 @@
     "version": "1.21.1-1.1.3",
     "curseForgeHash": 4238247090,
     "modrinthHash": "c283b466dbb20cb2287012da73b1154356959749"
+  },
+  "veil-neoforge-1.21.1-4.1.2.jar": {
+    "jarName": "veil-neoforge-1.21.1-4.1.2.jar",
+    "modId": "veil",
+    "name": "Veil",
+    "version": "4.1.2",
+    "curseForgeHash": 1532781810,
+    "modrinthHash": "c3c71f92caba331fe99aba8b8f469d5e2d4fab36"
   },
   "yuushya-1.21.0-neoforge-2.2.3.jar": {
     "jarName": "yuushya-1.21.0-neoforge-2.2.3.jar",
